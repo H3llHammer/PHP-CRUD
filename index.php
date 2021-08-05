@@ -1,5 +1,6 @@
 <?php include("db.php") ?>
 <?php include("includes/header.php") ?>
+<?php include("includes/navigation.php") ?>
 
     <h1>hola mundo</h1>
 
