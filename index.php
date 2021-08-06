@@ -29,7 +29,38 @@
         </div>
 
         <div class="col-md-8">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Created at</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        $query = "SELECT * FROM task";
+                        $result = $mysqli->query($query); 
 
+                        while($row = $result->fetch_array(MYSQLI_ASSOC)){ ?>
+                            <tr>
+                                <td><?php echo $row['title'] ?></td>
+                                <td><?php echo $row['description'] ?></td>
+                                <td><?php echo $row['created_at'] ?></td>
+                                <td>
+                                    <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="delete.php?id=<?php echo $row['id'] ?>" class="btn btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    
+                </tbody>
+            </table>           
         </div>
     </div>
 

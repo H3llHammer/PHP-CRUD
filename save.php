@@ -8,8 +8,8 @@ include("db.php");
         $description = $_POST['description'];
         
         $query = "INSERT INTO task(title, description) VALUES ('$title', '$description')";
-        $resultado = $mysqli->query($query);
-        if(!$resultado)
+        $result = $mysqli->query($query);
+        if(!$result)
         {
             printf("Error: %s\n", $mysqli->error);
         }
