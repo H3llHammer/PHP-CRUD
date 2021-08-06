@@ -17,6 +17,9 @@ include("db.php");
         #echo 'saved';
         #printf ("Nuevo registro con el id %d.\n", $mysqli->insert_id);
         
+        $_SESSION['message'] = 'Task saved succesfully';
+        $_SESSION['message_type'] = 'success';
+
         header("Location: index.php");
 
         $mysqli->close();
